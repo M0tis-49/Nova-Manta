@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nova Manta</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell" aria-label="Nova Manta">
+      <header class="hud" aria-label="Tableau de bord">
+        <div class="brand" aria-label="Nova Manta">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>NOVA MANTA</span>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <span>Secteur</span>
+            <strong id="levelValue">1</strong>
+          </div>
+          <div class="stat">
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="stat">
+            <span>Noyaux</span>
+            <strong><span id="coresValue">0</span>/<span id="targetValue">0</span></strong>
+          </div>
+          <div class="stat">
+            <span>Temps</span>
+            <strong id="timeValue">00</strong>
+          </div>
+        </div>
+
+        <div class="systems">
+          <div class="hearts" id="healthValue" aria-label="Coque"></div>
+          <div class="meter" aria-label="Dash">
+            <span id="energyBar"></span>
+          </div>
+          <div class="meter pulse" aria-label="Impulsion">
+            <span id="pulseBar"></span>
+          </div>
+          <button class="icon-button" id="skinToggle" type="button" aria-label="Choisir un skin" title="Skins">S</button>
+          <button class="icon-button" id="soundButton" type="button" aria-label="Son active">
+            <span id="soundIcon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="stage" aria-label="Zone de jeu">
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="banner" id="banner">
+          <div class="banner-panel">
+            <p class="kicker" id="bannerKicker">Secteur 01</p>
+            <h1 id="bannerTitle">Nova Manta</h1>
+            <p id="bannerText">95 secteurs, difficulte progressive, nouvelles menaces. Charge les noyaux et ouvre le portail.</p>
+            <div class="level-panel" id="levelPanel">
+              <p class="level-label">Secteur <strong id="selectedLevelLabel">01</strong> / 95</p>
+              <div class="level-grid" id="levelGrid"></div>
+            </div>
+            <div class="skin-panel" id="skinPanel">
+              <p class="skin-label">Apparence du vaisseau</p>
+              <div class="skin-grid" id="skinGrid"></div>
+            </div>
+            <button id="primaryButton" type="button">Lancer</button>
+          </div>
+        </div>
+
+        <div class="mobile-controls" aria-hidden="true">
+          <div class="stick" id="stick">
+            <span id="stickKnob"></span>
+          </div>
+          <div class="action-pad">
+            <button class="action-button" id="pulseButton" type="button" aria-label="Impulsion">*</button>
+            <button class="action-button wide" id="dashButton" type="button" aria-label="Dash">>></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
